@@ -19,3 +19,7 @@ button::after {
   background-color: white;
   color: black;
 }
+.resetButton {
+  background-color: red;
+  color: white;
+}
