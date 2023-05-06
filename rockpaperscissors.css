@@ -1,14 +1,15 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  color: white;
+  color: rgb(255, 255, 255);
   background: black;
+  padding: 2%;
 }
 button {
   color: black;
   font-weight: bolder;
-  margin: 2%;
   border: none;
+  margin: 2% 0;
 }
 button:hover {
   background-color: rgb(0, 0, 0);
