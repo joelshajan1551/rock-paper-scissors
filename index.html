@@ -12,9 +12,13 @@
     <button onclick="playGame('rock');">ROCk</button>
     <button onclick="playGame('paper');">PAPER</button>
     <button onclick="playGame('scissors');">SCISSORS</button>
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
     <button
       onclick="score.wins=0;score.losses=0;score.ties=0;
-      localStorage.removeItem('score');"
+      localStorage.removeItem('score');
+      update_score_element();"
       class="resetButton"
     >
       reset score
@@ -26,6 +30,8 @@
         losses: 0,
         ties: 0,
       };
+
+      update_score_element();
 
       function playGame(playerMove) {
         const cpu_move = pickComputerMove();
@@ -68,24 +74,34 @@
 
         localStorage.setItem("score", JSON.stringify(score));
 
-        alert(
-          `you picked ${playerMove}, computer picked ${cpu_move}\n\n${result}\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
-        );
-      }
-      function pickComputerMove() {
-        const randomNumber = Math.random();
+        update_score_element();
 
-        let cpu_move = " ";
+        document.querySelector(".js-result").innerHTML = result;
 
-        if (randomNumber > 0 && randomNumber < 1 / 3) {
-          cpu_move = "rock";
-        } else if (randomNumber > 1 / 3 && randomNumber < 2 / 3) {
-          cpu_move = "paper";
-        } else if (randomNumber > 2 / 3 && randomNumber < 1) {
-          cpu_move = "scissors";
+        document.querySelector(
+          ".js-moves"
+        ).innerHTML = `you pick ${playerMove}, computer picked ${cpu_move}`;
+
+        function update_score_element() {
+          document.querySelector(
+            ".js-score"
+          ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
         }
+        function pickComputerMove() {
+          const randomNumber = Math.random();
 
-        return cpu_move;
+          let cpu_move = " ";
+
+          if (randomNumber > 0 && randomNumber < 1 / 3) {
+            cpu_move = "rock";
+          } else if (randomNumber > 1 / 3 && randomNumber < 2 / 3) {
+            cpu_move = "paper";
+          } else if (randomNumber > 2 / 3 && randomNumber < 1) {
+            cpu_move = "scissors";
+          }
+
+          return cpu_move;
+        }
       }
     </script>
   </body>
