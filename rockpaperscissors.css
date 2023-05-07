@@ -2,25 +2,57 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   color: rgb(255, 255, 255);
-  background: black;
+  background: rgb(0, 0, 0);
   padding: 2%;
+  margin-bottom: 1000px;
 }
-button {
-  color: black;
-  font-weight: bolder;
-  border: none;
-  margin: 2% 0;
+.title {
+  font-size: 23px;
+  font-weight: 800;
+  margin-left: 10.5%;
 }
+
 button:hover {
-  background-color: rgb(0, 0, 0);
-  opacity: 0.5;
-  color: white;
+  background-color: rgb(78, 76, 76);
+  border-color: rgb(78, 76, 76);
 }
-button::after {
-  background-color: white;
-  color: black;
-}
+
 .resetButton {
   background-color: red;
   color: white;
+  padding: 8px;
+  border: none;
+  margin-top: 15px;
+  font-weight: bold;
+  margin-left: 2%;
+  cursor: pointer;
+}
+.emoji {
+  border-radius: 100px;
+  height: 50px;
+}
+.move-btn {
+  background-color: black;
+  border-radius: 60px;
+  border: 2px;
+  margin-left: 2%;
+  border-style: solid;
+  border-color: rgb(177, 177, 177);
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+}
+.result {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 2%;
+}
+.score {
+  margin-top: 50px;
+  margin-left: 2%;
+}
+.moves {
+  margin-left: 2%;
+  font-weight: 800;
 }
